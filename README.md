@@ -1,6 +1,7 @@
 # Rodo-Test
 Rodo-Test API can fetch data about car inventory.
 
+![rodoTestAPi](https://user-images.githubusercontent.com/50976344/124258710-90b24b80-dae2-11eb-9fd3-840bc0ea3727.png)
 
 
 ## How to use?
