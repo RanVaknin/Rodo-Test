@@ -85,9 +85,14 @@ function routeSetup(carData){
 
     //404 handler
     app.use(function (req,res,next){
-        res.status(404).send({"status":404,"error":"Not found"});
+        res.status(404).send({"status":404,"error":"Resource Not Found"});
     });
     
+    //error handler middleware
+    app.use((error, req, res, next) => {
+        console.error(error.stack);
+        res.status(500).send({"status":500 ,"error":"Server Error"});
+    })
 }
 
 getCarData().then(carData =>{
