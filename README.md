@@ -6,11 +6,15 @@ Rodo-Test API can fetch data about car inventory.
 
 ## How to use?
 - clone the Rodo-Test repo to your machine
+```
+git clone https://github.com/RanVaknin/Rodo-Test.git
+```
 - cd into the repo
+```
+cd Rodo-Test
+```
 - run the server with:
 ```
-https://github.com/RanVaknin/Rodo-Test.git
-cd Rodo-Test
 node server.js
 ```
 
