@@ -4,29 +4,29 @@ const express = require('express');
 const app = express();
 app.use('/api', jsonServer.router('./db.json'));
 
-
+// Making a request to json-server hosted api data
 async function getCarData(){
     const result = await fetch('http://localhost:8080/api/data');
     return await result.json();
 }
 
+// Setting up routes
 function routeSetup(carData){
     app.get('/', function (req, res) {
-        res.send({'message': "Hello World"})
+        res.send({'message': "Hello World"});
     })
     
     app.get('/cars', function (req, res) {
         const response = {};
         const {make,year,model,price} = req.query;
     
+        // Pagination Variables 
         const page = parseInt(req.query.page);
         const limit = parseInt(req.query.limit);
-    
         const startIndex = (page - 1) * limit;
         const endIndex = page * limit;
-        let result = carData;
-    
 
+        let result = carData;
     
         if(startIndex > 0){
             response.previous_page = page -1;
@@ -67,13 +67,7 @@ function routeSetup(carData){
         //paginated data based on our page number and limit
         response.data = result.slice(startIndex,endIndex);
     
-    
-        if(result.length > 0){
-            res.status(200).send(response);
-    
-        } else {
-            res.status(200).send({message : '404 Resource not found.'});
-        }
+        res.status(200).send(response);
     })
     
     //retrieve individual cars
