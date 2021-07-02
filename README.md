@@ -88,6 +88,7 @@ curl "http://localhost:8080/cars?make=toy&model=high&price=35000&page=1&limit=10
 - Implement Rate Limiting
 - Cache results
 - Build a simple front end to help simulate requests
+- Add enviornment variables and deploy to AWS
 
 
 
