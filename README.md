@@ -9,6 +9,8 @@ Rodo-Test API can fetch data about car inventory.
 - cd into the repo
 - run the server with:
 ```
+https://github.com/RanVaknin/Rodo-Test.git
+cd Rodo-Test
 node server.js
 ```
 
@@ -77,6 +79,11 @@ curl "http://localhost:8080/cars?make=toy&model=high&price=35000&page=1&limit=10
 }
 
 ```
+
+## What would I do next?
+- Implement Rate Limiting
+- Cache results
+- Build a simple front end to help simulate requests
 
 
 
